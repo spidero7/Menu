@@ -88,6 +88,6 @@ window.addEventListener("DOMContentLoaded", function () {
     </div>
 </article>`;
   });
-  displayMenu = displayMenu.join("");
-  sectionCenter.innerHTML = displayMenu
+  displayMenu
+  console.log(displayMenu);
 });

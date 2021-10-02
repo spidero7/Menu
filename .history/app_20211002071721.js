@@ -89,5 +89,5 @@ window.addEventListener("DOMContentLoaded", function () {
 </article>`;
   });
   displayMenu = displayMenu.join("");
-  sectionCenter.innerHTML = displayMenu
+  
 });
