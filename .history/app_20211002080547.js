@@ -93,11 +93,6 @@ filterButtons.forEach(button => {
       }
     });
     //console.log(menuCategory);
-    if (category === 'all') {
-      displayMenuItems(menu)
-    } else {
-      displayMenuItems(menuCategory)
-    }
   });
 })
 

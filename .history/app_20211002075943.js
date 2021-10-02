@@ -92,12 +92,7 @@ filterButtons.forEach(button => {
         return menuItem;
       }
     });
-    //console.log(menuCategory);
-    if (category === 'all') {
-      displayMenuItems(menu)
-    } else {
-      displayMenuItems(menuCategory)
-    }
+    console.log(menuCategory);
   });
 })
 

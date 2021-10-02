@@ -88,16 +88,10 @@ filterButtons.forEach(button => {
     const category = e.currentTarget.dataset.id;
     const menuCategory = menu.filter(menuItem => {
       //console.log(menuItem.category)
-      if (menuItem.category === category) {
-        return menuItem;
-      }
+      if (menuItem.category === category)
+      return menuItem;
     });
-    //console.log(menuCategory);
-    if (category === 'all') {
-      displayMenuItems(menu)
-    } else {
-      displayMenuItems(menuCategory)
-    }
+    console.log(menuCategory);
   });
 })
 
