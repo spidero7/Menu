@@ -147,5 +147,5 @@ filterButtons.forEach(button => {
      displayMenuItems(menuCategory)
    }
  });
-});
+})
 };

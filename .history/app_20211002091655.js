@@ -90,8 +90,43 @@ const buttonContainer = document.querySelector('.btn-container');
 // load items
 window.addEventListener("DOMContentLoaded", function () {
  displayMenuItems(menu);
- displayMenuButtons();
+
+ // dinamic filter buttons
+ // unique buttons
+ const categories = menu.reduce(function(values, item){
+   //console.log(values)
+   if (!values.includes(item.category)) {
+     values.push(item.category);
+   }
+   return values;
+ },['all']);
+ //console.log(categories)
+const categoryButtons = categories.map(category => {
+  return `<button class="filter-btn" type="button" 
+  data-id=${category}>${category}</button>`
+}).join("");
+//console.log(categoryButtons);
+  buttonContainer.innerHTML = categoryButtons;
 });
+
+// filter items
+filterButtons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter(menuItem => {
+      //console.log(menuItem.category)
+      if (menuItem.category === category) {
+        return menuItem;
+      }
+    });
+    //console.log(menuCategory);
+    if (category === 'all') {
+      displayMenuItems(menu)
+    } else {
+      displayMenuItems(menuCategory)
+    }
+  });
+})
 
 function displayMenuItems(menuItems) {
   let displayMenu = menuItems.map(function (item) {
@@ -109,43 +144,3 @@ function displayMenuItems(menuItems) {
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu
 }
-
-function displayMenuButtons() {
-   // dinamic filter buttons
- // unique buttons
- const categories = menu.reduce(function(values, item){
-  //console.log(values)
-  if (!values.includes(item.category)) {
-    values.push(item.category);
-  }
-  return values;
-},['all']);
-//console.log(categories)
-const categoryButtons = categories.map(category => {
- return `<button class="filter-btn" type="button" 
- data-id=${category}>${category}</button>`
-}).join("");
-//console.log(categoryButtons);
- buttonContainer.innerHTML = categoryButtons;
- const filterButtons =
- document.querySelectorAll('.filter-btn');
-
- // filter items
-filterButtons.forEach(button => {
- button.addEventListener('click', function(e) {
-   const category = e.currentTarget.dataset.id;
-   const menuCategory = menu.filter(menuItem => {
-     //console.log(menuItem.category)
-     if (menuItem.category === category) {
-       return menuItem;
-     }
-   });
-   //console.log(menuCategory);
-   if (category === 'all') {
-     displayMenuItems(menu)
-   } else {
-     displayMenuItems(menuCategory)
-   }
- });
-});
-};

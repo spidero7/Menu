@@ -90,7 +90,7 @@ const buttonContainer = document.querySelector('.btn-container');
 // load items
 window.addEventListener("DOMContentLoaded", function () {
  displayMenuItems(menu);
- displayMenuButtons();
+ displ
 });
 
 function displayMenuItems(menuItems) {
@@ -147,5 +147,5 @@ filterButtons.forEach(button => {
      displayMenuItems(menuCategory)
    }
  });
-});
-};
+})
+}
