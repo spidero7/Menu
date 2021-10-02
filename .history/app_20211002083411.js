@@ -76,38 +76,18 @@ const menu = [
     id: 10,
     title: "steak master",
     category: "dinner",
-    price: 39.99,
-    img: "./images/item-10.jpeg",
+    price: 39,
+    img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
 
-
 const sectionCenter = document.querySelector('.section-center');
-const buttonContainer = document.querySelector('.btn-container');
 const filterButtons = document.querySelectorAll('.filter-btn');
-
 
 // load items
 window.addEventListener("DOMContentLoaded", function () {
  displayMenuItems(menu);
-
- // dinamic filter buttons
- // unique buttons
- const categories = menu.reduce(function(values, item){
-   //console.log(values)
-   if (!values.includes(item.category)) {
-     values.push(item.category);
-   }
-   return values;
- },['all']);
- //console.log(categories)
-const categoryButtons = categories.map(category => {
-  return `<button class="filter-btn" type="button" 
-  data-id=${category}>${category}</button>`
-}).join("");
-//console.log(categoryButtons);
-  buttonContainer.innerHTML = categoryButtons;
 });
 
 // filter items

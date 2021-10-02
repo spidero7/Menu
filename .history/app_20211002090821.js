@@ -82,11 +82,8 @@ const menu = [
   },
 ];
 
-
 const sectionCenter = document.querySelector('.section-center');
-const buttonContainer = document.querySelector('.btn-container');
 const filterButtons = document.querySelectorAll('.filter-btn');
-
 
 // load items
 window.addEventListener("DOMContentLoaded", function () {
@@ -104,10 +101,8 @@ window.addEventListener("DOMContentLoaded", function () {
  //console.log(categories)
 const categoryButtons = categories.map(category => {
   return `<button class="filter-btn" type="button" 
-  data-id=${category}>${category}</button>`
-}).join("");
-//console.log(categoryButtons);
-  buttonContainer.innerHTML = categoryButtons;
+  data-id=${}>breakfast</button>`
+});
 });
 
 // filter items

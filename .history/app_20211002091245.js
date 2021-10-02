@@ -107,7 +107,7 @@ const categoryButtons = categories.map(category => {
   data-id=${category}>${category}</button>`
 }).join("");
 //console.log(categoryButtons);
-  buttonContainer.innerHTML = categoryButtons;
+  buttonContainer.innerHTML = c
 });
 
 // filter items
